@@ -7,10 +7,12 @@ import os
 load_dotenv()
 
 uri = os.getenv("MONGODB_URI")
-# client = MongoClient(uri, server_api=ServerApi('1'))
+is_local_mongodb = os.getenv("IS_LOCAL_MONGODB", "").lower() in ('true', '1', 't', 'y', 'yes')
 
-# Create a new client and connect to the server
-client = MongoClient('mongodb', 27017)
+if is_local_mongodb:
+    client = MongoClient('mongodb', 27017)
+else:
+    client = MongoClient(uri, server_api=ServerApi('1'))
 
 db = client.forex_rates
 

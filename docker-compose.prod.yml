@@ -1,16 +1,6 @@
 version: '3.9'
 
 services:
-  mongodb:
-    image: mongo:6-jammy
-    container_name: mongodb
-    ports:
-      - '27018:27017'
-    volumes:
-      - dbdata6:/data/db
-    networks:
-      - backend
-
   fastapi:
     container_name: fastapi
     build: .
@@ -19,15 +9,11 @@ services:
       - '8000:8000'
     volumes:
       - .:/code
-    depends_on:
-      - mongodb
     networks:
       - backend
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017/forex_rates
-
-volumes:
-  dbdata6:
+      - MONGODB_URI=mongodb+srv://admin:85wMpqAjAYw5b8f2@cluster0.mb9g87r.mongodb.net/?retryWrites=true&w=majority
+      - IS_LOCAL_MONGODB=False
 
 networks:
   backend:
