@@ -1,7 +1,7 @@
 ## NBKR Forex Rates Parser
 
 This project demonstrates the use of FastAPI with MongoDB to fetch and store foreign exchange rates from 
-the National Bank of the Kyrgyz Republic (NBKR). It showcases how to structure a FastAPI project, perform 
+the National Bank of the Kyrgyz Republic (NBKR) for **USD**, **EUR**, **RUB** and **KZT** currencies. It showcases how to structure a FastAPI project, perform 
 asynchronous HTTP requests, parse HTML content, and interact with MongoDB.
 
 

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query, HTTPException
-from models.todos import CurrencyEnum
+from models.models import CurrencyEnum
 from config.database import collection_name
 from utils.parser import get_NBKR_forex_rates
 from schemas.schema import list_forex_serial
